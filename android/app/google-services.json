@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1020999389032",
+    "project_id": "flyerchat-7ff0d",
+    "storage_bucket": "flyerchat-7ff0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020999389032:android:abfc75d57e8246101290dd",
+        "android_client_info": {
+          "package_name": "com.mudoki.flyerchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020999389032-4t9kgkp90sk9bg15d6km0vnjkquija61.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mudoki.flyerchat",
+            "certificate_hash": "3db81cc0268c34be47176ac11e1a802261dabd85"
+          }
+        },
+        {
+          "client_id": "1020999389032-8ekq7jkp3s8s08ald98pffmvsibocvad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8D_HLnWumjEoPMpVlwhHUhf09GbMrsZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020999389032-8ekq7jkp3s8s08ald98pffmvsibocvad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
