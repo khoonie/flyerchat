@@ -1,10 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flyerchat/auth/authentication.dart';
 import 'package:flyerchat/auth/email_login.dart';
 import 'package:flyerchat/auth/email_signup.dart';
 import 'package:flyerchat/flyerchat.dart';
+import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 
 class Signup extends StatelessWidget {
   const Signup({Key? key}) : super(key: key);
@@ -21,6 +24,14 @@ class Signup extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                const Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text("FlyerChat Sign Up",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          fontFamily: 'Roboto')),
+                ),
                 FutureBuilder(
                     future: Authentication.initializeFirebase(context: context),
                     builder: (context, snapshot) {
@@ -36,14 +47,6 @@ class Signup extends StatelessWidget {
                         ),
                       );
                     }),
-                const Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text("FlyerChat Sign Up",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          fontFamily: 'Roboto')),
-                ),
                 Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: SignInButton(
@@ -133,6 +136,14 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   });
 
                   if (user != null) {
+                    await FirebaseChatCore.instance.createUserInFirestore(
+                      types.User(
+                          firstName: user.displayName,
+                          id: user.uid,
+                          imageUrl: user.photoURL,
+                          lastName: user.displayName),
+                    );
+
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) => FlyerChat(
