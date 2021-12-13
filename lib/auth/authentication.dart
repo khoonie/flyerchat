@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flyerchat/flyerchat.dart';
+import 'package:flyerchat/menu.dart';
 
 class Authentication {
   static Future<FirebaseApp> initializeFirebase(
@@ -15,7 +15,7 @@ class Authentication {
     if (user != null) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => FlyerChat(
+          builder: (context) => Menu(
             user: user,
           ),
         ),

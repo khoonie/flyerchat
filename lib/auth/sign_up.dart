@@ -5,7 +5,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flyerchat/auth/authentication.dart';
 import 'package:flyerchat/auth/email_login.dart';
 import 'package:flyerchat/auth/email_signup.dart';
-import 'package:flyerchat/flyerchat.dart';
+import 'package:flyerchat/menu.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 
@@ -73,7 +73,7 @@ class Signup extends StatelessWidget {
                         if (user.user != null) {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (context) => FlyerChat(
+                              builder: (context) => Menu(
                                 user: user.user!,
                               ),
                             ),
@@ -146,7 +146,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
 
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => FlyerChat(
+                        builder: (context) => Menu(
                           user: user,
                         ),
                       ),
